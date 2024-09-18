@@ -1,5 +1,5 @@
 {
-  "name": "design-system",
+  "name": "@henrique1204/design-system",
   "version": "0.0.1",
   "author": "Henrique1204",
   "license": "ISC",
@@ -13,7 +13,8 @@
     "url": "https://github.com/Henrique1204/design-system/issues"
   },
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "publish": "npm version patch && npm version publish"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
