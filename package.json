@@ -1,16 +1,16 @@
 {
-  "name": "@henrique1204/design-system",
-  "version": "0.0.2",
+  "name": "@henrique1204/frontend-toolkit",
+  "version": "0.0.1",
   "author": "Henrique1204",
   "license": "ISC",
   "description": "Meu design system.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Henrique1204/design-system"
+    "url": "https://github.com/Henrique1204/frontend-toolkit"
   },
-  "homepage": "https://github.com/Henrique1204/design-system#readme",
+  "homepage": "https://github.com/Henrique1204/frontend-toolkit#readme",
   "bugs": {
-    "url": "https://github.com/Henrique1204/design-system/issues"
+    "url": "https://github.com/Henrique1204/frontend-toolkit/issues"
   },
   "scripts": {
     "build": "rollup -c",
