@@ -5,6 +5,7 @@ import dts from 'rollup-plugin-dts';
 
 import { terser } from 'rollup-plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import postcss from 'rollup-plugin-postcss';
 
 const packageJson = require('./package.json');
 
@@ -24,20 +25,24 @@ export default [
       },
     ],
     plugins: [
-      // Iniciar o plugin de resolução de perDependencies
+      postcss({
+        extract: true,
+        minimize: true,
+        sourceMap: true,
+      }),
       peerDepsExternal(),
 
       resolve(),
       commonjs(),
       typescript({ tsconfig: './tsconfig.json' }),
 
-      // E adicionar o terser
       terser(),
     ],
   },
   {
     input: 'dist/esm/types/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
+    external: [/\.css$/],
     plugins: [dts()],
   },
 ];
