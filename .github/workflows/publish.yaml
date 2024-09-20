@@ -1,0 +1,44 @@
+name: Publicar no NPM
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - master
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v2
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Instalar dependências
+        run: yarn install
+
+      - name: Executar testes
+        run: yarn test
+
+      - name: Construir o pacote
+        run: yarn build
+
+      - name: Publicar no NPM
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Atualizar versão no GitHub
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add package.json
+          git commit -m "Atualizar versão para ${{ steps.package-version.outputs.version }}"
+          git push

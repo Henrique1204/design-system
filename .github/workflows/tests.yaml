@@ -1,0 +1,35 @@
+name: Executar Testes
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v2
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Instalar dependências
+        run: yarn install
+
+      - name: Executar testes
+        run: yarn test
+
+      # - name: Executar testes
+      #   run: yarn test:coverage
+
+      # - name: Verificar cobertura de testes
+      #   run: |
+      #     if [ $(yarn test:coverage | grep -oP '(?<=All files\s+)\d+(\.\d+)?') -lt 80 ]; then
+      #       echo "A cobertura de testes está abaixo de 80%. Por favor, adicione mais testes."
+      #       exit 1
+      #     fi
