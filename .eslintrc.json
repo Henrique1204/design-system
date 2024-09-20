@@ -44,5 +44,48 @@
       }
     ],
     "react/react-in-jsx-scope": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          [
+            "@tests",
+            "./src/tests"
+          ],
+          [
+            "@types",
+            "./src/types"
+          ],
+          [
+            "@components",
+            "./src/components"
+          ],
+          [
+            "@theme",
+            "./src/theme"
+          ],
+          [
+            "@hooks",
+            "./src/hooks"
+          ],
+          [
+            "@utils",
+            "./src/utils"
+          ],
+          [
+            "@mocks",
+            "./src/mocks"
+          ]
+        ],
+        "extensions": [
+          ".ts",
+          ".tsx",
+          ".js",
+          ".jsx",
+          ".json"
+        ]
+      }
+    }
   }
 }
