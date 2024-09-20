@@ -30,15 +30,12 @@ jobs:
       - name: Construir o pacote
         run: yarn build
 
+      - name: Configurar usuário Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
       - name: Publicar no NPM
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Atualizar versão no GitHub
-        run: |
-          git config --local user.email "pauloh16.pdr@gmail.com"
-          git config --local user.name "Paulo Henrique"
-          git add package.json
-          git commit -m "Atualizar versão para ${{ steps.package-version.outputs.version }}"
-          git push
