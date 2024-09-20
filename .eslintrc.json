@@ -1,6 +1,12 @@
 {
   "parser": "@babel/eslint-parser",
-  "extends": ["react-app", "react-app/jest", "ts-react-important-stuff"],
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "ts-react-important-stuff",
+    "plugin:storybook/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
   "parserOptions": {
     "sourceType": "module"
   },
@@ -9,7 +15,14 @@
     "browser": true,
     "es6": true
   },
-  "plugins": ["import", "react", "react-hooks", "testing-library"],
+  "plugins": [
+    "import",
+    "react",
+    "react-hooks",
+    "testing-library",
+    "storybook",
+    "jsx-a11y"
+  ],
   "rules": {
     "keyword-spacing": 2,
     "react-hooks/rules-of-hooks": "off",
