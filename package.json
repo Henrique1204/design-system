@@ -18,7 +18,7 @@
     "dev": "rollup -c -w & npx serve --cors -l 5500",
     "storybook:dev": "storybook dev -p 6006",
     "storybook:build": "storybook build",
-    "test": "vitest",
+    "test": "vitest run",
     "test:dev": "vitest --silent --watch",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint --fix --format compact \"src/**/*.{js,jsx,ts,tsx}\"",
