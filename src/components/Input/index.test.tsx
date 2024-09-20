@@ -7,6 +7,6 @@ import TextField from '.';
 describe('TextField', () => {
   it('renderiza com o label correto', () => {
     render(<TextField label="Campo" />);
-    expect(screen.getByText('Campo2')).toBeInTheDocument();
+    expect(screen.getByText('Campo')).toBeInTheDocument();
   });
 });
