@@ -37,8 +37,8 @@ jobs:
 
       - name: Atualizar versão no GitHub
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "pauloh16.pdr@gmail.com"
+          git config --local user.name "Paulo Henrique"
           git add package.json
           git commit -m "Atualizar versão para ${{ steps.package-version.outputs.version }}"
           git push
